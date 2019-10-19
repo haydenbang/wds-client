@@ -1,0 +1,19 @@
+.wds-about-wrapper {
+}
+
+.wds-about__title {
+    height: 40px;
+    font-size: 22px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.wds-about__header {
+    height: 320px;
+    background-color: cadetblue;
+}
+
+.wds-about__body {
+    height: 320px;
+    background-color: khaki;
+}

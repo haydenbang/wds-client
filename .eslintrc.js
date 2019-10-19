@@ -23,6 +23,9 @@ module.exports = {
         "prettier/prettier": ["error"],
         "react/jsx-filename-extension": 0,
         "react/jsx-one-expression-per-lint": 0,
-        "react/perfer-stateless-function": 0
+        "linebreak-style": 0,
+        "react/prefer-stateless-function": 0,
+        "object-curly-newline": 0,
+        "import/no-unresolved": 0
     }
 };
