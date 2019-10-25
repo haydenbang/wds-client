@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Home from 'pages/home/Home';
 import Header from 'shared/Header';
+import Footer from 'shared/Footer';
 import About from 'pages/about/About';
 import Image from 'pages/image/Image';
 import NotFound from 'shared/NotFound';
@@ -20,6 +21,7 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
             <Route component={NotFound} />
           </Switch>
+          <Footer/>
         </div>
       </Router>
     );
