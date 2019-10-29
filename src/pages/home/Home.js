@@ -60,6 +60,9 @@ const styles = theme => ({
  * Class
  */
 class Home extends Component {
+
+  /***** 1. 컴포넌트 마운트 ******/
+
   /**
    * Constructor
    * @param {} props 
@@ -67,14 +70,76 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      test: 'life cycle test'
+    };
 
-    //console.log('constructor');
+    console.log('load 1 - constructor');                          // 컴포넌트 생성시
   }
 
   // componentWillMount() {
-  //   console.log('componentWillMount');
+  //   console.log('load 2 - componentWillMount');                   // 컴포넌트 마운트 전 (Render 전 실행) - v.17 삭제
   // }
+
+  componentDidMount() {
+    console.log('load 3 - componentDidMount');                    // 컴포넌트 마운트 후 (Render 후 실행)
+  }
+
+  /***** 2. 컴포넌트 업데이트 ******/
+
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('click 1 - componentWillReceiveProps');           // 새로운 Props 받은 후 - v.17 삭제
+  //   if (this.props.name !== nextProps.name) {
+  //     this.setState({ value: nextProps.name });
+  //   }
+  // }
+
+  // componentWillReceiveProps의 대체 메소드
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('click 2 - getDerivedStateFromProps');                // props와 state 값을 동기화할 때 사용하는 함수
+    if(nextProps.value !== prevState.value){
+      return { value: nextProps.value }
+    }
+    
+    return null;
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {    
+    console.log('click 2 - shouldComponentUpdate');               // True : Render YES, False : Render NO (아래 실행 X)
+    return true;
+  }
+
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log('click 3 - componentWillUpdate');                // v.17 삭제
+  // }
+
+  // componentWillUpdate의 대체 메소드
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('click 3 - getSnapshotBeforeUpdate');
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('click 4 - componentDidUpdate');
+    console.log(this.state);
+  }
+
+  componentDidCatch(error, info) {
+    this.setState({ isError: true });
+    console.log('catch - componentDidCatch');                       // 자신의 에러 Catch X, 자식의 Component 에러 Catch O
+    console.log('error : ' + error);
+    console.log('info : ' + info);
+  }
+
+  onClickButton() {
+    console.log('click event');
+  }
+
+  /***** 3. 컴포넌트 언마운트 ******/
+
+  componentWillUnmount() {
+    console.log('leave component - componentWillUnmount');          // event, function, 외부 라이브러리 인스턴스 제거 등 할때 사용
+  }
 
   /**
    * Render
@@ -154,7 +219,7 @@ class Home extends Component {
             {user.map(post => (
               <Grid item key={post.title} xs={12} md={4}>
                 <CardActionArea component="a" href="#">
-                  <Card className={classes.card}>
+                  <Card className={classes.card} onClick={this.onClickButton.bind(this)}>
                     <div className={classes.cardDetails}>
                       <CardContent>
                         <Typography component="h2" variant="h5">
@@ -165,6 +230,9 @@ class Home extends Component {
                         </Typography>
                         <Typography variant="subtitle1" paragraph>
                           {post.description}
+                        </Typography>
+                        <Typography variant="subtitle1" color="primary">
+                          Continue reading...
                         </Typography>
                       </CardContent>
                     </div>
