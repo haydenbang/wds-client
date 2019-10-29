@@ -1,10 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
+/**
+ * Internal Component
+ */
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -18,27 +21,74 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles(theme => ({
+/**
+ * Style
+ * @param {*} theme 
+ */
+const styles = theme => ({
   footer: {
-    backgroundColor: theme.palette.background.paper,
-    marginTop: theme.spacing(8),
-    padding: theme.spacing(6, 0),
-  },
-}));
+        backgroundColor: theme.palette.background.paper,
+        marginTop: theme.spacing(8),
+        padding: theme.spacing(6, 0),
+      },
+});
 
-export default function Footer() {
-  const classes = useStyles();
+/**
+ * Class
+ */
+class Footer extends Component {
+  /**
+   * Constructor
+   * @param {} props 
+   */
+  constructor(props) {
+    super(props);
 
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Container maxWidth="lg">
-          <Copyright />
-        </Container>
-      </footer>
-      {/* End footer */}
-    </React.Fragment>
-  );
+    this.state = {};
+  }
+  
+  /**
+   * Render
+   */
+  render () {
+    const { classes } = this.props;
+
+    return (
+      <React.Fragment>
+        <CssBaseline />
+        <footer className={classes.footer}>
+          <Container maxWidth="lg">
+            <Copyright />
+          </Container>
+        </footer>
+      </React.Fragment>
+    );
+  }
 }
+
+export default withStyles(styles)(Footer);
+
+// const useStyles = makeStyles(theme => ({
+//   footer: {
+//     backgroundColor: theme.palette.background.paper,
+//     marginTop: theme.spacing(8),
+//     padding: theme.spacing(6, 0),
+//   },
+// }));
+
+// export default function Footer() {
+//   const classes = useStyles();
+
+//   return (
+//     <React.Fragment>
+//       <CssBaseline />
+//       {/* Footer */}
+//       <footer className={classes.footer}>
+//         <Container maxWidth="lg">
+//           <Copyright />
+//         </Container>
+//       </footer>
+//       {/* End footer */}
+//     </React.Fragment>
+//   );
+// }

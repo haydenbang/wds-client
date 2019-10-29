@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -9,9 +9,13 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
-import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
-const useStyles = makeStyles(theme => ({
+
+/**
+ * Style
+ * @param {*} theme 
+ */
+const styles = theme => ({
   mainFeaturedPost: {
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
@@ -50,58 +54,78 @@ const useStyles = makeStyles(theme => ({
   cardMedia: {
     width: 160,
   }
-}));
+});
 
-const user = [
-  {
-    title: '정곤',
-    date: '1',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: '민지',
-    date: '2',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: '기웅',
-    date: '3',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: '정아',
-    date: '4',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: '재두',
-    date: '5',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: '서해',
-    date: '6',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-];
+/**
+ * Class
+ */
+class Home extends Component {
+  /**
+   * Constructor
+   * @param {} props 
+   */
+  constructor(props) {
+    super(props);
 
-export default function Home() {
-  const classes = useStyles();
+    this.state = {};
 
-  return (
-    <React.Fragment>
+    //console.log('constructor');
+  }
+
+  // componentWillMount() {
+  //   console.log('componentWillMount');
+  // }
+
+  /**
+   * Render
+   */
+  render() {
+    const { classes } = this.props;
+    const user = [
+      {
+        title: '정곤',
+        date: '1',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      },
+      {
+        title: '민지',
+        date: '2',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      },
+      {
+        title: '기웅',
+        date: '3',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      },
+      {
+        title: '정아',
+        date: '4',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      },
+      {
+        title: '재두',
+        date: '5',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      },
+      {
+        title: '서해',
+        date: '6',
+        description:
+          'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      },
+    ];
+
+    return (
+      <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
       <main>
-        {/* Main featured post */}
         <Paper className={classes.mainFeaturedPost}>
-            {/* Increase the priority of the hero background image */}
             {
               <img
                 style={{ display: 'none' }}
@@ -126,8 +150,6 @@ export default function Home() {
               </Grid>
             </Grid>
           </Paper>
-          {/* End main featured post */}
-          {/* Sub featured posts */}
           <Grid container spacing={4}>
             {user.map(post => (
               <Grid item key={post.title} xs={12} md={4}>
@@ -161,9 +183,11 @@ export default function Home() {
       </main>
       </Container>
     </React.Fragment>
-  );
+    );
+  }
 }
 
+export default withStyles(styles)(Home);
 
 // import React, { Component } from 'react';
 // import './Home.css';
