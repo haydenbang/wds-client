@@ -57,7 +57,9 @@ class Header extends Component {
         <CssBaseline />
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
-            <Button size="small" style={{textTransform: 'none'}}>{this.state.title}</Button>
+            <Link className={classes.toolbarLink} to="/Home">
+              <Button size="small" style={{textTransform: 'none'}}>{this.state.title}</Button>
+            </Link>
             <Typography
               component="h2"
               variant="h5"
@@ -68,9 +70,11 @@ class Header extends Component {
             >
               Welcome
             </Typography>
-            <IconButton>
-              <SearchIcon />
-            </IconButton>
+            <Link className={classes.toolbarLink} to="/Search">
+              <IconButton to="/search">
+                <SearchIcon />
+              </IconButton>
+            </Link>
             <Button variant="outlined" size="small" style={{textTransform: 'none'}}>
               Sign up
             </Button>

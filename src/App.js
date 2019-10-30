@@ -6,6 +6,7 @@ import Header from 'shared/Header';
 import Footer from 'shared/Footer';
 import About from 'pages/about/About';
 import Image from 'pages/image/Image';
+import Search from 'pages/search/Search';
 import NotFound from 'shared/NotFound';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/image" component={Image} />
+            <Route path="/search" component={Search} />
             <Redirect exact from="/" to="/home" />
             <Route component={NotFound} />
           </Switch>
