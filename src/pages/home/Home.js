@@ -126,7 +126,7 @@ class Home extends Component {
             {this.state.users.map(row => (
               <Grid item key={row.title} xs={12} md={4}>
                 <CardActionArea component="a" href="#">
-                  <Card className={classes.card} onClick={this.onClickButton.bind(this)}>
+                  <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
                         <Typography component="h2" variant="h5">
