@@ -19,12 +19,12 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts build",
-    "test": "cross-env NODE_PATH=src react-scripts test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "lint-fix": "eslint --fix ."
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src"
   },
   "browserslist": {
     "production": [
