@@ -3,19 +3,19 @@ import { shallow } from 'enzyme';
 import Home from 'pages/home/Home';
 
 describe('Home', () => {
-  const wrapper = shallow(<Home />);
+  const wrapper = shallow(<Home />).dive();
 
   describe('render', () => {
-    it('show wds home title', () => {
-      expect(wrapper.find('.wds-home__title').text()).toEqual(
-        'Web Development Signature Home Page',
+    it('show wds main title', () => {
+      expect(wrapper.find('.main_title').text()).toEqual(
+        '이미지 기반 관리 / 검색 서비스',
       );
     });
-    it('show wds header', () => {
-      expect(wrapper.find('.wds-home__header').exists()).toBeTruthy();
+    it('show wds main area', () => {
+      expect(wrapper.find('.main_area').exists()).toBeTruthy();
     });
-    it('show wds home body', () => {
-      expect(wrapper.find('.wds-home__header').exists()).toBeTruthy();
+    it('show wds user area', () => {
+      expect(wrapper.find('.user_area').exists()).toBeTruthy();
     });
   });
 });
