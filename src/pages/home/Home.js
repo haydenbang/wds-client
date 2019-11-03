@@ -12,10 +12,6 @@ import Hidden from '@material-ui/core/Hidden';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
 
-/**
- * Style
- * @param {*} theme 
- */
 const styles = theme => ({
   mainFeaturedPost: {
     position: 'relative',
@@ -57,14 +53,7 @@ const styles = theme => ({
   }
 });
 
-/**
- * Class
- */
 class Home extends Component {
-  /**
-   * Constructor
-   * @param {} props 
-   */
   constructor(props) {
     super(props);
 
@@ -74,7 +63,6 @@ class Home extends Component {
   }
                                                            
   componentDidMount() {
-    // axios.get() test
     axios.get('http://localhost:3000/api/v1/sample.json')
     .then(response => {
       this.setState({
@@ -82,13 +70,9 @@ class Home extends Component {
       });
     })
     .catch(error => {
-      // Error
     });
   }
 
-  /**
-   * Render
-   */
   render() {
     const { classes } = this.props;
 
@@ -163,27 +147,3 @@ class Home extends Component {
 }
 
 export default withStyles(styles)(Home);
-
-// import React, { Component } from 'react';
-// import './Home.css';
-
-// export default class Home extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       title: 'Web Development Signature Home Page',
-//     };
-//   }
-
-//   render() {
-//     const { title } = this.state;
-
-//     return (
-//       <div className="wds-home-wrapper">
-//         <div className="wds-home__title">{title}</div>
-//         <div className="wds-home__header">This is head area.</div>
-//         <div className="wds-home__body">This is body area.</div>
-//       </div>
-//     );
-//   }
-// }
