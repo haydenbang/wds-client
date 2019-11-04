@@ -9,6 +9,7 @@ import About from 'pages/about/About';
 import Image from 'pages/image/Image';
 import Search from 'pages/search/Search';
 import NotFound from 'shared/NotFound';
+import User from 'pages/users/User';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/image" component={Image} />
             <Route path="/search" component={Search} />
+            <Route path="/user" component={User} />
             <Redirect exact from="/" to="/home" />
             <Route component={NotFound} />
           </Switch>

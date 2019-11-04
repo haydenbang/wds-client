@@ -1,0 +1,8 @@
+.userList {
+    width: 100%;
+    overflowX: auto;
+}
+
+.userTable {
+    minWidth: 650;
+}
