@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": ["react-app", "prettier", "airbnb"],
+    "extends": ["react-app", "airbnb"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -16,13 +16,10 @@ module.exports = {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": [
-        "prettier"
-    ],
     "rules": {
-        "prettier/prettier": ["error"],
         "react/jsx-filename-extension": 0,
         "react/jsx-one-expression-per-lint": 0,
+        "react/no-array-index-key": 0,
         "linebreak-style": 0,
         "react/prefer-stateless-function": 0,
         "object-curly-newline": 0,

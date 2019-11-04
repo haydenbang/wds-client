@@ -12,8 +12,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
-const styles = theme => ({
+const styles = (theme) => ({
   mainFeaturedPost: {
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
@@ -66,16 +67,16 @@ class Home extends Component {
   componentDidMount() {
     axios
       .get('http://localhost:3000/api/v1/sample.json')
-      .then(response => {
+      .then((response) => {
         this.setState({
           users: response.data.rows,
         });
-      })
-      .catch(error => {});
+      });
   }
 
   render() {
     const { classes } = this.props;
+    const { users } = this.state;
 
     return (
       <>
@@ -107,32 +108,32 @@ class Home extends Component {
               </Grid>
             </Paper>
             <Grid container spacing={4} className="user_area">
-              {this.state.users.map(row => (
+              {users.map((row) => (
                 <Grid item key={row.title} xs={12} md={4}>
                   <CardActionArea component="a" href="#">
                     <Card className={classes.card}>
                       <div className={classes.cardDetails}>
                         <CardContent>
-                                <Typography component="h2" variant="h5">
+                          <Typography component="h2" variant="h5">
                             {row.title}
                           </Typography>
-                                <Typography variant="subtitle1" color="textSecondary">
+                          <Typography variant="subtitle1" color="textSecondary">
                             {row.date}
                           </Typography>
-                                <Typography variant="subtitle1" paragraph>
+                          <Typography variant="subtitle1" paragraph>
                             {row.description}
                           </Typography>
-                                <Typography variant="subtitle1" color="primary">
+                          <Typography variant="subtitle1" color="primary">
                             Continue reading...
                           </Typography>
-                              </CardContent>
+                        </CardContent>
                       </div>
                       <Hidden xsDown>
                         <CardMedia
-                                className={classes.cardMedia}
-                                image="https://source.unsplash.com/random"
-                                title="Image title"
-                              />
+                          className={classes.cardMedia}
+                          image="https://source.unsplash.com/random"
+                          title="Image title"
+                        />
                       </Hidden>
                     </Card>
                   </CardActionArea>
@@ -145,5 +146,9 @@ class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  classes: PropTypes.string.isRequired,
+};
 
 export default withStyles(styles)(Home);
