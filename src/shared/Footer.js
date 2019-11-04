@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      Copyright ©
       <Link color="inherit" href="/home">
         Web Development Sigature
       </Link>{' '}
@@ -23,14 +23,14 @@ function Copyright() {
 
 /**
  * Style
- * @param {*} theme 
+ * @param {*} theme
  */
 const styles = theme => ({
   footer: {
-        backgroundColor: theme.palette.background.paper,
-        marginTop: theme.spacing(8),
-        padding: theme.spacing(6, 0),
-      },
+    backgroundColor: theme.palette.background.paper,
+    marginTop: theme.spacing(8),
+    padding: theme.spacing(6, 0),
+  },
 });
 
 /**
@@ -39,56 +39,32 @@ const styles = theme => ({
 class Footer extends Component {
   /**
    * Constructor
-   * @param {} props 
+   * @param {} props
    */
   constructor(props) {
     super(props);
 
     this.state = {};
   }
-  
+
   /**
    * Render
    */
-  render () {
+  render() {
     const { classes } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         <CssBaseline />
         <footer className={classes.footer}>
           <Container maxWidth="lg">
             <Copyright />
           </Container>
         </footer>
-      </React.Fragment>
+      </>
     );
   }
 }
 
 export default withStyles(styles)(Footer);
 
-// const useStyles = makeStyles(theme => ({
-//   footer: {
-//     backgroundColor: theme.palette.background.paper,
-//     marginTop: theme.spacing(8),
-//     padding: theme.spacing(6, 0),
-//   },
-// }));
-
-// export default function Footer() {
-//   const classes = useStyles();
-
-//   return (
-//     <React.Fragment>
-//       <CssBaseline />
-//       {/* Footer */}
-//       <footer className={classes.footer}>
-//         <Container maxWidth="lg">
-//           <Copyright />
-//         </Container>
-//       </footer>
-//       {/* End footer */}
-//     </React.Fragment>
-//   );
-// }

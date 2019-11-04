@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 
 /**
  * Style
- * @param {*} theme 
+ * @param {*} theme
  */
 const styles = theme => ({
   toolbar: {
@@ -21,44 +21,46 @@ const styles = theme => ({
     flex: 1,
   },
   toolbarSecondary: {
-    //justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     overflowX: 'auto',
   },
   toolbarLink: {
     padding: theme.spacing(1),
     flexShrink: 0,
     color: 'inherit',
-    textDecoration : 'none'
+    textDecoration: 'none',
   },
 });
 
 class Header extends Component {
   /**
    * Constructor
-   * @param {} props 
+   * @param {} props
    */
   constructor(props) {
     super(props);
 
     this.state = {
-      title : 'Web Development Signature'
+      title: 'Web Development Signature',
     };
   }
 
   /**
    * Render
    */
-  render () {
+  render() {
     const { classes } = this.props;
     const sections = ['Home', 'Image', 'About'];
 
     return (
-      <React.Fragment>
+      <>
         <CssBaseline />
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
             <Link className={classes.toolbarLink} to="/Home">
-              <Button size="small" style={{textTransform: 'none'}}>{this.state.title}</Button>
+              <Button size="small" style={{ textTransform: 'none' }}>
+                {this.state.title}
+              </Button>
             </Link>
             <Typography
               component="h2"
@@ -75,102 +77,22 @@ class Header extends Component {
                 <SearchIcon />
               </IconButton>
             </Link>
-            <Button variant="outlined" size="small" style={{textTransform: 'none'}}>
+            <Button variant="outlined" size="small" style={{ textTransform: 'none' }}>
               Sign up
             </Button>
           </Toolbar>
           <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-            {sections.map(section => (
-              <Link
-                key={section}
-                className={classes.toolbarLink}
-                to={'/' + section}
-              >
+            {sections.map((section) => (
+              <Link key={section} className={classes.toolbarLink} to={`/${section}`}>
                 {section}
               </Link>
             ))}
           </Toolbar>
         </Container>
-      </React.Fragment>
+      </>
     );
   }
 }
 
 export default withStyles(styles)(Header);
 
-// export default function Header() {
-//   const classes = useStyles();
-
-//   return (
-//     <React.Fragment>
-//       <CssBaseline />
-//       <Container maxWidth="lg">
-//         <Toolbar className={classes.toolbar}>
-//           <Button size="small" style={{textTransform: 'none'}}>Web Development Signature</Button>
-//           <Typography
-//             component="h2"
-//             variant="h5"
-//             color="inherit"
-//             align="center"
-//             noWrap
-//             className={classes.toolbarTitle}
-//           >
-//             Welcome
-//           </Typography>
-//           <IconButton>
-//             <SearchIcon />
-//           </IconButton>
-//           <Button variant="outlined" size="small" style={{textTransform: 'none'}}>
-//             Sign up
-//           </Button>
-//         </Toolbar>
-//         <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-//           {sections.map(section => (
-//             <Link
-//               //color="inherit"
-//               //noWrap
-//               //variant="body2"
-//               //href="#"
-//               key={section}
-//               className={classes.toolbarLink}
-//               to={'/' + section}
-//             >
-//               {section}
-//             </Link>
-//           ))}
-//         </Toolbar>
-//         <main>
-          
-//         </main>
-//       </Container>
-//     </React.Fragment>
-//   );
-// }
-
-/*
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import './Header.css';
-
-class Header extends Component {
-  render() {
-    return (
-      <div className="wds-header">
-        <div className="wds-header-container">
-          <Link className="wds-header-link-btn" to="/">
-            Home
-          </Link>
-          <Link className="wds-header-link-btn" to="/image">
-            Image
-          </Link>
-          <Link className="wds-header-link-btn" to="/about">
-            About
-          </Link>
-        </div>
-      </div>
-    );
-  }
-}
-export default Header;
-*/
