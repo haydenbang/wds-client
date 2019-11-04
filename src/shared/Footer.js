@@ -70,7 +70,7 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  classes: PropTypes.string.isRequired,
+  classes: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 export default withStyles(styles)(Footer);

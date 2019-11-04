@@ -52,7 +52,7 @@ class Header extends Component {
   render() {
     const { classes } = this.props;
     const { title } = this.state;
-    const sections = ['Home', 'Image', 'About', 'User'];
+    const sections = ['Main', 'Home', 'Image', 'About', 'User'];
 
     return (
       <>
@@ -97,7 +97,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.string.isRequired,
+  classes: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 export default withStyles(styles)(Header);

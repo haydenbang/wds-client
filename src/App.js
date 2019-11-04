@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/image" component={Image} />
             <Route path="/search" component={Search} />
             <Route path="/user" component={User} />
-            <Redirect exact from="/" to="/home" />
+            <Redirect exact from="/" to="/main" />
             <Route component={NotFound} />
           </Switch>
           <Footer />

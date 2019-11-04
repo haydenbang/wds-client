@@ -148,7 +148,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  classes: PropTypes.string.isRequired,
+  classes: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 export default withStyles(styles)(Home);
