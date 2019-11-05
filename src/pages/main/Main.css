@@ -10,11 +10,13 @@
 }
 
 .wds-main__header {
-    height: 320px;
+    height: 400px;
+    background-color: #FBEEFC;
 }
 
 .wds-main__key-visual {
-    background-image: url("/public/images/main__keyvisual.jpg");
+    height: 320px;
+    text-align: center;
 }
 
 .wds-main__body {

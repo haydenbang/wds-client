@@ -18,12 +18,12 @@ class Main extends Component {
       <div className="wds-main-wrapper">
         <div className="wds-main__title">Main Page</div>
         <div className="wds-main__header">
-          <div className="wds-main__key-visual" />
+          <img className="wds-main__key-visual" src="/images/main__keyvisual.jpg" alt="main__keyvisual" />
         </div>
         <div className="wds-main__body">
           <div className="wds-main__body-container">
             {
-              defaultOwners.map((user, index) => (<UserCardItem key={`${index}_user`} name={user.name} desc={user.description} />))
+              defaultOwners.map((user, index) => (<UserCardItem key={`${index}_user`} name={user.name} description={user.description} />))
             }
           </div>
         </div>

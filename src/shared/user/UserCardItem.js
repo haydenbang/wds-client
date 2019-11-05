@@ -8,7 +8,7 @@ class UserCardItem extends Component {
     const { name, description } = this.props;
     return (
       <div className="wds-card-item__wrapper">
-        <div className="wds-card-item__user-info-thumbnail" />
+        <img src="/images/main__keyvisual.jpg" alt="main__keyvisual" className="wds-card-item__user-info-thumbnail" />
         <div className="wds-card-item__user-info-container">
           <div className="wds-card-item__user-info-name">{name}</div>
           <div className="wds-card-item__user-info-nick-name">{description}</div>

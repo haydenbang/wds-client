@@ -9,8 +9,6 @@
 .wds-card-item__user-info-thumbnail {
     width: 360px;
     height: 160px;
-    background-image: url("/public/images/main__keyvisual.jpg");
-    background-repeat: no-repeat;
 }
 
 .wds-card-item__user-info-container {
