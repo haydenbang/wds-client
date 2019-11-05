@@ -19,6 +19,7 @@ class Main extends Component {
         <div className="wds-main__title">Main Page</div>
         <div className="wds-main__header">
           <img className="wds-main__key-visual" src="/images/main__keyvisual.jpg" alt="main__keyvisual" />
+          <span className="wds-main__main_title">이미지 기반 관리 / 검색 서비스</span>
         </div>
         <div className="wds-main__body">
           <div className="wds-main__body-container">

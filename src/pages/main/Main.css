@@ -19,6 +19,16 @@
     text-align: center;
 }
 
+.wds-main__main_title {
+    z-index: 100;
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    left: 150px;
+    top: 350px;
+    color: #FBEEFC;
+}
+
 .wds-main__body {
     width: 100%;
     height: calc(100% - 400px);
