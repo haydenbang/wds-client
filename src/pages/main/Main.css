@@ -1,0 +1,32 @@
+.wds-main-wrapper {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+.wds-main__title {
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.wds-main__header {
+    height: 320px;
+}
+
+.wds-main__key-visual {
+    background-image: url("/public/images/main__keyvisual.jpg");
+}
+
+.wds-main__body {
+    width: 100%;
+    height: calc(100% - 400px);
+}
+
+.wds-main__body-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: #EEFAFD;
+}

@@ -1,0 +1,26 @@
+.wds-header {
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+    text-align: center;
+    background-color: #FBEEFC;
+    padding: 10px 30px;
+}
+
+.wds-header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0 50px;
+    margin-top: 10px;
+}
+
+.wds-header-title {
+    height: 30px;
+    font-size: 20px;
+}
+
+.wds-header-link-btn {
+    width: 100px;
+    height: 20px;
+    text-align: center;
+}

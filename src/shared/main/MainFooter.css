@@ -1,0 +1,21 @@
+.wds-footer {
+    font-family: 'Lucida Sans';
+    font-weight: bold;
+    text-align: center;
+    background-color: #FBEEFC;
+    padding: 10px 30px;
+}
+
+.wds-footer-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 50px;
+    margin-top: 10px;
+}
+
+.wds-footer-contents {
+    height: 30px;
+    font-size: 12px;
+    text-align: right;
+}
