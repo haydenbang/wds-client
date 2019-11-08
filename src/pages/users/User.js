@@ -1,10 +1,4 @@
 import React, { Component } from 'react';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import PropTypes from 'prop-types';
 
 import './User.css';
@@ -14,38 +8,37 @@ class User extends Component {
     const { users } = this.props;
     if (users !== undefined) {
       return (
-        <Paper className="userList">
-          <Table className="userTable" aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>idx</TableCell>
-                <TableCell align="right">아이디</TableCell>
-                <TableCell align="right">이름</TableCell>
-                <TableCell align="right">닉네임</TableCell>
-                <TableCell align="right">주소</TableCell>
-                <TableCell align="right">연락처</TableCell>
-                <TableCell align="right">가입날짜</TableCell>
-                <TableCell align="right">최근접속날짜</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {users.map((row) => (
-                <TableRow key={row.idx}>
-                  <TableCell component="th" scope="row">
-                    {row.idx}
-                  </TableCell>
-                  <TableCell align="right">{row.id}</TableCell>
-                  <TableCell align="right">{row.name}</TableCell>
-                  <TableCell align="right">{row.nick_name}</TableCell>
-                  <TableCell align="right">{row.address}</TableCell>
-                  <TableCell align="right">{row.tel}</TableCell>
-                  <TableCell align="right">2019-11-01</TableCell>
-                  <TableCell align="right">2019-11-01</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Paper>
+        <div className="wds-main-wrapper">
+          <div className="wds-main__title">Main Page</div>
+          <div className="wds-main__body">
+            <div className="wds-main__body-container">
+              <table border="1">
+                <tbody>
+                  <tr align="center">
+                    <td align="right">아이디</td>
+                    <td align="right">이름</td>
+                    <td align="right">닉네임</td>
+                    <td align="right">주소</td>
+                    <td align="right">연락처</td>
+                    <td align="right">가입날짜</td>
+                    <td align="right">최근접속날짜</td>
+                  </tr>
+                  {users.map((row) => (
+                    <tr>
+                      <td>{row.id}</td>
+                      <td>{row.name}</td>
+                      <td>{row.nick_name}</td>
+                      <td>{row.address}</td>
+                      <td>{row.tel}</td>
+                      <td>2019-11-02</td>
+                      <td>2019-11-02</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       );
     }
     return <p>Loading...</p>;
