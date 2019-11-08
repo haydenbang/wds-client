@@ -4,16 +4,13 @@
 .wds-image__title {
     height: 40px;
     font-size: 22px;
-    background-color: antiquewhite;
     text-align: center;
 }
 
 .wds-image__header {
     height: 320px;
-    background-color: cadetblue;
 }
 
 .wds-image__body {
     height: 320px;
-    background-color: khaki;
 }

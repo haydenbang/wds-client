@@ -1,3 +1,3 @@
-export * from './Users';
+export * from './UserApi';
 
 // export { Users };

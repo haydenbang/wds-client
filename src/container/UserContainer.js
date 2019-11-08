@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import User from '../pages/users/User';
 import { getUserList } from '../actions';
 
-class UsersContainer extends Component {
-  constructor(props) {
-    super(props);
+class UserContainer extends Component {
+  componentDidMount() {
     const { getUserList } = this.props;
     getUserList();
   }
@@ -17,7 +16,7 @@ class UsersContainer extends Component {
   }
 }
 
-UsersContainer.propTypes = {
+UserContainer.propTypes = {
   getUserList: PropTypes.oneOfType([PropTypes.func]).isRequired,
   users: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
@@ -27,4 +26,4 @@ const mapStateToProps = (state) => state.users;
 export default connect(
   mapStateToProps,
   { getUserList },
-)(UsersContainer);
+)(UserContainer);

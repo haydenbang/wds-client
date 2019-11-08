@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserCardItem from '../../shared/user/UserCardItem';
-import dummyUsers from '../../shared/Contants';
+import { DUMMY_OWNERS } from '../../shared/Contants';
 
 import './Main.css';
 
@@ -8,7 +8,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      defaultOwners: dummyUsers.rows,
+      defaultOwners: DUMMY_OWNERS.rows,
     };
   }
 

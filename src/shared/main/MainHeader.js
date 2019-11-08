@@ -28,9 +28,6 @@ class MainHeader extends Component {
           <Link className="wds-header-link-btn" to="/image">
             Image
           </Link>
-          <Link className="wds-header-link-btn" to="/about">
-            About
-          </Link>
           <Link className="wds-header-link-btn" to="/user">
             User
           </Link>

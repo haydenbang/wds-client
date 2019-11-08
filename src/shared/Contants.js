@@ -1,4 +1,4 @@
-const DummyOwners = {
+const DUMMY_OWNERS = {
   code: 200,
   message: 'OK',
   rows: [
@@ -41,4 +41,6 @@ const DummyOwners = {
   ],
 };
 
-export default DummyOwners;
+const DEV_WAS_DOMAIN = '13.124.207.31:5080';
+
+export { DUMMY_OWNERS, DEV_WAS_DOMAIN };

@@ -10,10 +10,9 @@ import MainHeader from 'shared/main/MainHeader';
 import MainFooter from 'shared/main/MainFooter';
 import Main from 'pages/main/Main';
 import Home from 'pages/home/Home';
-import About from 'pages/about/About';
 import Image from 'pages/image/Image';
 import NotFound from 'shared/NotFound';
-import UsersContainer from './UsersContainer';
+import UsersContainer from './container/UserContainer';
 
 class AppContainer extends Component {
   render() {
@@ -25,11 +24,11 @@ class AppContainer extends Component {
             <Route path="/main" component={Main} />
             <Route path="/home" component={Home} />
             <Route path="/image" component={Image} />
-            <Route path="/about" component={About} />
             <Route path="/user" component={UsersContainer} />
             <Redirect exact from="/" to="/main" />
             <Route component={NotFound} />
           </Switch>
+          <body className="app-container__body" />
           <MainFooter />
         </div>
       </Router>

@@ -6,14 +6,10 @@ class MainFooter extends Component {
   render() {
     return (
       <div className="wds-footer">
-        <div className="wds-footer-container">
-          <div className="wds-footer-contents">
-            Copyright © Web Development Sigature
-            {' '}
-            {new Date().getFullYear()}
-            {'.'}
-          </div>
-        </div>
+        Copyright © Web Development Signature
+        {' '}
+        {new Date().getFullYear()}
+        {'.'}
       </div>
     );
   }

@@ -1,8 +1,8 @@
 // action 타입 정의
 export const UserTypes = {
-  GET_USERS_LIST_REQUEST: 'users/get_users_list_request',
-  GET_USERS_SUCCESS: 'users/get_users_success',
-  CREATE_USER: 'users/create_user',
+  GET_USERS_LIST_REQUEST: 'userReducers/get_users_list_request',
+  GET_USERS_SUCCESS: 'userReducers/get_users_success',
+  CREATE_USER: 'userReducers/create_user',
 };
 
 // 액션 생성 함수 정의

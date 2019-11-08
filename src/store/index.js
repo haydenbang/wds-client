@@ -1,7 +1,7 @@
 import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware } from 'redux';
-import reducers from '../reducers';
-import rootSaga from '../sagas';
+import reducers from '../reducer';
+import rootSaga from '../saga';
 
 // 리덕스 상태 모니터링 chrome extension 사용하기 위해서
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();

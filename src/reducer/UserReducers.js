@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 };
 
 // 리듀서 작성
-export default function users(state = INITIAL_STATE, action) {
+export default function userReducers(state = INITIAL_STATE, action) {
   switch (action.type) {
     case UserTypes.GET_USERS_SUCCESS: {
       return {

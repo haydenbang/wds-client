@@ -1,21 +1,12 @@
 .wds-footer {
-    font-family: 'Lucida Sans';
-    font-weight: bold;
-    text-align: center;
-    background-color: #FBEEFC;
-    padding: 10px 30px;
-}
-
-.wds-footer-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 0 50px;
-    margin-top: 10px;
-}
-
-.wds-footer-contents {
-    height: 30px;
-    font-size: 12px;
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    padding: 0 25px;
+    line-height: 60px;
+    color: #8a8c8f;
+    border-top: 1px solid #dee5e7;
+    background-color: #f2f2f2;
     text-align: right;
 }
+

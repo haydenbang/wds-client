@@ -73,13 +73,13 @@ describe("User Saga", () => {
 
   // import { expectSaga } from "redux-saga-test-plan";
   // import * as api from "../../api";
-  // import { getUsers } from "../../sagas/Users";
+  // import { getUsers } from "../../saga/Users";
   // import * as actions from "../../actions";
   // import { take, put, call } from "redux-saga/effects";
   // import { UserTypes, getUserList } from "../../actions";
 
   // it("it fetches userList, 유저리스트 api 호출 성공", () => {
-  //   const users = [
+  //   const userReducers = [
   //     {
   //       address: "서울",
   //       create_date: 1573025631000,
@@ -130,10 +130,10 @@ describe("User Saga", () => {
   //     }
   //   ];
   //   return expectSaga(getUsers)
-  //     .provide([[call(api.getUsers), users]])
+  //     .provide([[call(api.getUsers), userReducers]])
   //     .put({
   //       type: UserTypes.GET_USERS_SUCCESS,
-  //       payload: users
+  //       payload: userReducers
   //     })
   //     .run();
 });
