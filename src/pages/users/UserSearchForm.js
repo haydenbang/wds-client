@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './User.css';
 
@@ -11,7 +12,7 @@ class UserSearchForm extends Component {
           placeholder="검색어를 입력하세요."
           name="userSearch"
         />
-        <button>검색</button>
+        <Link to="/users" className="user_search_button"><button>Search</button></Link>
       </form>
     );
   }
