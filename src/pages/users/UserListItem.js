@@ -18,7 +18,6 @@ class UserListItem extends Component {
         <td>2019-11-02</td>
       </tr>
     );
-    return <p>Loading...</p>;
   }
 }
 
