@@ -12,7 +12,11 @@ class UserSearchForm extends Component {
           placeholder="검색어를 입력하세요."
           name="userSearch"
         />
-        <Link to="/users" className="user_search_button"><button>Search</button></Link>
+        <Link to="/users">
+          <button type="button">
+               Search
+          </button>
+        </Link>
       </form>
     );
   }
