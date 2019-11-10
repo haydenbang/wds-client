@@ -1,8 +1,46 @@
-.userList {
+.wds-user__body-container {
     width: 100%;
-    overflowX: auto;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
-.userTable {
-    minWidth: 650;
+.wds-user__title {
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.wds-user__body {
+    width: 100%;
+    height: calc(100% - 400px);
+}
+
+.wds-user-wrapper {
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+table.wds_user_table {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 20px 10px;
+}
+table.wds_user_table th {
+    width: 155px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: #ce4869 ;
+}
+table.wds_user_table td {
+    width: 155px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
 }

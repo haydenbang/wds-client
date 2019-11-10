@@ -8,23 +8,27 @@ class User extends Component {
     const { users } = this.props;
     if (users !== undefined) {
       return (
-        <div className="wds-main-wrapper">
-          <div className="wds-main__title">Main Page</div>
-          <div className="wds-main__body">
-            <div className="wds-main__body-container">
-              <table border="1">
-                <tbody>
+        <div className="wds-user-wrapper">
+          <div className="wds-user__title">Users Page</div>
+          <div className="wds-user__body">
+            <div className="wds-user__body-container">
+              <table className="wds_user_table">
+                <thead>
                   <tr align="center">
-                    <td align="right">아이디</td>
-                    <td align="right">이름</td>
-                    <td align="right">닉네임</td>
-                    <td align="right">주소</td>
-                    <td align="right">연락처</td>
-                    <td align="right">가입날짜</td>
-                    <td align="right">최근접속날짜</td>
+                    <th scope="cols">번호</th>
+                    <th scope="cols">아이디</th>
+                    <th scope="cols">이름</th>
+                    <th scope="cols">닉네임</th>
+                    <th scope="cols">주소</th>
+                    <th scope="cols">연락처</th>
+                    <th scope="cols">가입날짜</th>
+                    <th scope="cols">최근접속날짜</th>
                   </tr>
+                </thead>
+                <tbody>
                   {users.map((row) => (
                     <tr>
+                      <td>{row.idx}</td>
                       <td>{row.id}</td>
                       <td>{row.name}</td>
                       <td>{row.nick_name}</td>
