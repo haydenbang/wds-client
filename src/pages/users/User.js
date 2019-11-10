@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import UserSearchForm from './UserSearchForm';
 
 import './User.css';
+import UserListItem from './UserListItem';
 
 class User extends Component {
   render() {
@@ -12,6 +14,9 @@ class User extends Component {
           <div className="wds-user__title">Users Page</div>
           <div className="wds-user__body">
             <div className="wds-user__body-container">
+              <div>
+                <UserSearchForm />
+              </div>
               <table className="wds_user_table">
                 <thead>
                   <tr align="center">
@@ -26,18 +31,9 @@ class User extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((row) => (
-                    <tr>
-                      <td>{row.idx}</td>
-                      <td>{row.id}</td>
-                      <td>{row.name}</td>
-                      <td>{row.nick_name}</td>
-                      <td>{row.address}</td>
-                      <td>{row.tel}</td>
-                      <td>2019-11-02</td>
-                      <td>2019-11-02</td>
-                    </tr>
-                  ))}
+                  {
+                    users.map((row) => (<UserListItem key={`${row.idx}`} row={row} />))
+                  }
                 </tbody>
               </table>
             </div>
