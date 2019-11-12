@@ -1,21 +1,23 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import Image from 'pages/image/Image';
+import { shallow, mount } from 'enzyme';
+import Image from '../../../pages/image/Image';
+import ImageUploadForm from "../../../pages/image/ImageUploadForm";
+import ImageListItem from "../../../pages/image/ImageListItem";
 
 describe('Image', () => {
   const wrapper = shallow(<Image />);
 
   describe('render', () => {
-    it('show wds home title', () => {
-      expect(wrapper.find('.wds-image__title').text()).toEqual(
-        'Image Page',
-      );
+
+    it('show wds image upload', () => {
+      const wrapperUpload = mount(<ImageUploadForm />);
+      //expect(wrapperUpload.find('#upload_input').exists()).toBeTruthy();
+      //expect(wrapperUpload.find('#upload_button').exists()).toBeTruthy();
     });
-    it('show wds header', () => {
-      expect(wrapper.find('.wds-image__header').exists()).toBeTruthy();
-    });
-    it('show wds home body', () => {
-      expect(wrapper.find('.wds-image__header').exists()).toBeTruthy();
+
+    it('show wds image card view', () => {
+      const wrapperList = mount(<ImageListItem />);
+      //expect(wrapperList.find('.image_item').exists()).toBeTruthy();
     });
   });
 });
