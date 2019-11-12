@@ -13,7 +13,7 @@ class UserSearchForm extends Component {
           name="userSearch"
         />
         <Link to="/users">
-          <button type="button">
+          <button type="button" className="btn-gradient red">
                Search
           </button>
         </Link>

@@ -16,6 +16,12 @@ class UserListItem extends Component {
         <td>{row.tel}</td>
         <td>2019-11-02</td>
         <td>2019-11-02</td>
+        <td>User</td>
+        <td>
+          <button type="button" className="btn-gradient red mini">
+                Active
+          </button>
+        </td>
       </tr>
     );
   }
