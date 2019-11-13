@@ -6,11 +6,11 @@ import '../users/User.css';
 class ImageUploadForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {file:null}  // state 초기화
+    this.state = {file: null}  // state 초기화
   }
 
   onChange(e) {
-
+    this.setState({file: e.target.files[0]})
   }
 
   onClick() {
