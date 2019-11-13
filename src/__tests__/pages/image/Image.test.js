@@ -11,8 +11,8 @@ describe('Image', () => {
 
     it('show wds image upload', () => {
       const wrapperUpload = mount(<ImageUploadForm />);
-      //expect(wrapperUpload.find('#upload_input').exists()).toBeTruthy();
-      //expect(wrapperUpload.find('#upload_button').exists()).toBeTruthy();
+      expect(wrapperUpload.find('#uploadInput').exists()).toBeTruthy();
+      expect(wrapperUpload.find('#uploadButton').exists()).toBeTruthy();
     });
 
     it('show wds image card view', () => {

@@ -10,12 +10,8 @@ class Image extends Component {
       <div className="wds-image-wrapper">
         <div className="wds-image__title">Image Page</div>
         <div className="wds-image__body">
-            <div>
-                <ImageUploadForm />
-            </div>
-            <table>
-                <ImageListItem />
-            </table>
+            <ImageUploadForm />
+            <ImageListItem />
         </div>
       </div>
     );

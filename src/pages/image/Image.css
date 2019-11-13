@@ -14,3 +14,7 @@
 .wds-image__body {
     height: 320px;
 }
+
+.upload_input input[type="file"] {
+
+}
