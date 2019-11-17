@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
 import './Image.css';
+import '../../shared/css/Modal.css';
 
 class ImageUploadForm extends Component {
   constructor(props) {
@@ -45,17 +46,17 @@ class ImageUploadForm extends Component {
       <Fragment>
       {this.props.isOpen ?
         <Fragment>
-        <div className="Modal-overlay" onClick={this.props.close} />
-        <div className="Modal">
+        <div className="wds-modal__overlay" onClick={this.props.close} />
+        <div className="wds-modal__modal">
           <p className="title">Image Upload</p>
           <div className="content">
             <p>File Select</p>
-            <input type="file" id="uploadInput" className="upload_input" name="file" onChange={e => this.onChangeFile(e)} />
+            <input type="file" className="wds-image__upload_input_file" name="file" onChange={e => this.onChangeFile(e)} />
             <p>Contents</p>
-            <textarea className="no_resize upload_contents" name="contents" value={this.state.contents} onChange={e => this.onChangeText(e)} />
+            <textarea className="wds-image__upload_contents" name="contents" value={this.state.contents} onChange={e => this.onChangeText(e)} />
           </div>
           <div className="button-wrap">
-            <button id="uploadButton" onClick={this.onClick}>Upload</button>
+            <button className="wds-image__upload_button" onClick={this.onClick}>Upload</button>
           </div>
         </div>
         </Fragment>
