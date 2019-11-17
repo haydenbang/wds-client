@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import axios from 'axios';
 
 import './Image.css';
 import '../../shared/css/Modal.css';
+import {uploadImage} from "../../api";
 
 class ImageUploadForm extends Component {
   constructor(props) {
@@ -28,17 +28,9 @@ class ImageUploadForm extends Component {
 
   onClick() {
     const formData = new FormData();
-    const url = "";
     formData.append('file', this.state.file);
     formData.append('contents', this.state.contents);
-    return axios.post(url, formData)
-        .then(res => {
-            console.log(res.data);
-            alert("이미지 업로드 완료되었습니다.");
-        }).catch(err => {
-            console.log(err.data);
-            alert("이미지 업로드 실패하였습니다.")
-        })
+    return uploadImage(formData);
   }
 
   render() {
