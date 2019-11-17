@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import './Image.css';
 import '../../shared/css/Modal.css';
-import {uploadImage} from "../../api";
+import {uploadImage} from "../../redux/api";
 
 class ImageUploadForm extends Component {
   constructor(props) {

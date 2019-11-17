@@ -1,9 +1,9 @@
 import { take, put, call } from "redux-saga/effects";
 import { cloneableGenerator } from "@redux-saga/testing-utils";
-import { getUsers } from "../sagas/Users";
-import { UserTypes, getUserList } from "../../actions";
+import { getUsers } from ".//Users";
+import { UserTypes, getUserList } from "../../../redux/actions";
 import * as api from ".././api";
-import * as actions from "../../actions";
+import * as actions from "../../../redux/actions";
 
 describe("User Saga", () => {
   const gen = cloneableGenerator(getUsers)(); //복사가 가능한 제너레이터 객체 생성

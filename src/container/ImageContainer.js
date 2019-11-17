@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Image from '../pages/image/Image';
-import { getImageList } from '../actions';
+import { getImageList } from '../redux/actions';
 
 class ImageContainer extends Component {
   componentDidMount() {
