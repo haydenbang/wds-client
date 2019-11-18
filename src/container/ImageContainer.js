@@ -6,7 +6,6 @@ import { getImageList } from '../redux/actions';
 
 class ImageContainer extends Component {
   componentDidMount() {
-    const { getImageList } = this.props;
     getImageList();
   }
 
@@ -17,7 +16,6 @@ class ImageContainer extends Component {
 }
 
 ImageContainer.propTypes = {
-  getImageList: PropTypes.oneOfType([PropTypes.func]).isRequired,
   images: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 

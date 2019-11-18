@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import './Image.css';
 import '../../shared/css/Button.css';
-import ImageUploadForm from "./ImageUploadForm";
-import ImageListItem from "./ImageListItem";
+import ImageUploadForm from './ImageUploadForm';
+import ImageListItem from './ImageListItem';
 
 class Image extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {isFormOpen: false};
+    this.state = { isFormOpen: false };
 
     // This binding is necessary to make `this` work in the callback
     this.openUploadForm = this.openUploadForm.bind(this);
@@ -16,21 +16,22 @@ class Image extends Component {
   }
 
   openUploadForm() {
-    this.setState({isFormOpen: true});
+    this.setState({ isFormOpen: true });
   }
 
   closeUploadForm() {
-    this.setState({isFormOpen: false});
+    this.setState({ isFormOpen: false });
   }
 
   render() {
+    const upload = this.state;
     return (
       <div className="wds-image-wrapper">
         <div className="wds-image__title">Image Page</div>
         <div className="wds-image__body">
-            <button className="wds-image__modal_open wds-btn__gradient red" onClick={this.openUploadForm}>Upload</button>
-            <ImageUploadForm isOpen={this.state.isFormOpen} close={this.closeUploadForm} />
-            <ImageListItem />
+          <button type="button" className="wds-image__modal_open wds-btn__gradient red" onClick={this.openUploadForm}>Upload</button>
+          <ImageUploadForm isOpen={upload.isFormOpen} close={this.closeUploadForm} />
+          <ImageListItem />
         </div>
       </div>
     );
