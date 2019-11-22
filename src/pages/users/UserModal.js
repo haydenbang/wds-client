@@ -1,24 +1,40 @@
-import React, { Component } from 'react';
-import { FaEdit } from 'react-icons/fa';
-import { connect } from 'react-redux';
-import './UserModal.css';
-import PropTypes from 'prop-types';
-import { createUser } from '../../actions';
+import React, { Component } from "react";
+import { FaEdit } from "react-icons/fa";
+import { connect } from "react-redux";
+import "./UserModal.css";
+import PropTypes from "prop-types";
+import { createUser } from "../../redux/actions";
 
-const authorityValue = ['Owner', 'Admin', 'Normal'];
+const authorityValue = ["Owner", "Admin", "Normal"];
 class UserModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showDefaultPreview: true,
-      defaultImg: '/images/default_profile.png',
-      imagePreviewUrl: '',
+      defaultImg: "/images/default_profile.png",
+      imagePreviewUrl: ""
     };
   }
 
-  handleSubmit = () => {
-    // handleCloseSignupModal();
+  // handleSubmit = () => {
+  //   // handleCloseSignupModal();
+  //   const { id, pass, name, nickname, address, tel, imgFile } = this.state;
+  //   const user = {
+  //     id,
+  //     pass,
+  //     name,
+  //     nickname,
+  //     address,
+  //     tel,
+  //     photo: imgFile,
+  //   };
+  //   createUser(user);
+  // };
+
+  handleClickConfirm = () => {
+    console.log("click");
     const { id, pass, name, nickname, address, tel, imgFile } = this.state;
+    const { createUserConnect } = this.props;
     const user = {
       id,
       pass,
@@ -26,24 +42,11 @@ class UserModal extends Component {
       nickname,
       address,
       tel,
-      photo: imgFile,
+      photo: imgFile
     };
-    createUser(user);
-  };
 
-  // handleClickConfirm = () => {
-  //   // handleCloseSignupModal();
-  //   const user = {
-  //     id: this.state.id,
-  //     pass: this.state.pass,
-  //     name: this.state.name,
-  //     nickname: this.state.nickname,
-  //     address: this.state.address,
-  //     tel: this.state.tel,
-  //     photo: this.state.imgFile,
-  //   };
-  //   createUser(user);
-  // };
+    createUserConnect(user);
+  };
 
   handleClickCancel = () => {
     const { handleCloseSignupModal } = this.props;
@@ -54,7 +57,7 @@ class UserModal extends Component {
     this.fileElement.click();
   };
 
-  handleImageChange = (e) => {
+  handleImageChange = e => {
     e.preventDefault();
 
     const reader = new FileReader();
@@ -64,7 +67,7 @@ class UserModal extends Component {
       this.setState({
         imgFile,
         imagePreviewUrl: reader.result,
-        showDefaultPreview: false,
+        showDefaultPreview: false
       });
     };
 
@@ -75,37 +78,37 @@ class UserModal extends Component {
 
   handleIdChange = ({ target: { value } }) => {
     this.setState({
-      id: value,
+      id: value
     });
   };
 
   handlePassChange = ({ target: { value } }) => {
     this.setState({
-      pass: value,
+      pass: value
     });
   };
 
   handleNameChange = ({ target: { value } }) => {
     this.setState({
-      name: value,
+      name: value
     });
   };
 
   handleNicknameChange = ({ target: { value } }) => {
     this.setState({
-      nickname: value,
+      nickname: value
     });
   };
 
   handleAddressChange = ({ target: { value } }) => {
     this.setState({
-      address: value,
+      address: value
     });
   };
 
   handlePhoneChange = ({ target: { value } }) => {
     this.setState({
-      tel: value,
+      tel: value
     });
   };
 
@@ -115,7 +118,7 @@ class UserModal extends Component {
   //   });
   // };
 
-  handleEditImgKeyDown = (e) => {
+  handleEditImgKeyDown = e => {
     // keycode 69 : e
     if (e.keyCode() === 69) {
       this.handleImageChange(e);
@@ -136,10 +139,11 @@ class UserModal extends Component {
       handleAddressChange,
       handlePhoneChange,
       handleEditImgKeyDown,
+      handleClickConfirm
       // handleAuthorityChange,
-      handleSubmit,
+      // handleSubmit,
     } = this;
-    const modalTitle = isSignUp ? 'Sign Up' : 'User Detail';
+    const modalTitle = isSignUp ? "Sign Up" : "User Detail";
 
     // const showImage = () => {
     //   {showDefaultPreview ? (
@@ -158,15 +162,13 @@ class UserModal extends Component {
       <>
         {isOpen ? (
           <div className="wds-userModal__Modal">
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}> */}
+            <form>
               <div className="wds-userModal__title">
                 <p className="wds-userModal__title_text">{modalTitle}</p>
               </div>
               <div className="wds-userModal__content">
                 <div className="wds-userModal__profile">
-                  <label htmlFor="img" className="wds-userModal">
-                    Profile Picture
-                  </label>
                   <div className="wds-userModal__picture_area">
                     {showDefaultPreview ? (
                       <img
@@ -193,7 +195,7 @@ class UserModal extends Component {
                         type="file"
                         id="file"
                         name="file"
-                        ref={(input) => {
+                        ref={input => {
                           this.fileElement = input;
                         }}
                         onChange={handleImageChange}
@@ -205,89 +207,90 @@ class UserModal extends Component {
                 <div className="wds-userModal__inputs">
                   <label htmlFor="id" className="wds-userModal">
                     아이디 :
+                    <input
+                      className="wds-userModal"
+                      type="text"
+                      id="id"
+                      name="id"
+                      onChange={handleIdChange}
+                    />
                   </label>
-                  <input
-                    className="wds-userModal"
-                    type="text"
-                    id="id"
-                    name="id"
-                    onChange={handleIdChange}
-                  />
 
                   <label htmlFor="password" className="wds-userModal">
                     비밀번호 :
+                    <input
+                      className="wds-userModal"
+                      type="text"
+                      id="password"
+                      name="password"
+                      onChange={handlePassChange}
+                    />
                   </label>
-                  <input
-                    className="wds-userModal"
-                    type="text"
-                    id="password"
-                    name="password"
-                    onChange={handlePassChange}
-                  />
 
                   <label htmlFor="name" className="wds-userModal">
                     이름 :
+                    <input
+                      className="wds-userModal"
+                      type="text"
+                      id="name"
+                      name="user_name"
+                      onChange={handleNameChange}
+                    />
                   </label>
-                  <input
-                    className="wds-userModal"
-                    type="text"
-                    id="name"
-                    name="user_name"
-                    onChange={handleNameChange}
-                  />
 
                   <label htmlFor="nickname" className="wds-userModal">
                     닉네임 :
+                    <input
+                      className="wds-userModal"
+                      type="text"
+                      id="nickname"
+                      name="nickname"
+                      onChange={handleNicknameChange}
+                    />
                   </label>
-                  <input
-                    className="wds-userModal"
-                    type="text"
-                    id="nickname"
-                    name="nickname"
-                    onChange={handleNicknameChange}
-                  />
 
                   <label htmlFor="address" className="wds-userModal">
                     주소 :
+                    <input
+                      className="wds-userModal"
+                      type="text"
+                      id="address"
+                      name="address"
+                      onChange={handleAddressChange}
+                    />
                   </label>
-                  <input
-                    className="wds-userModal"
-                    type="text"
-                    id="address"
-                    name="address"
-                    onChange={handleAddressChange}
-                  />
 
                   <label htmlFor="phone" className="wds-userModal">
                     연락처 :
+                    <input
+                      className="wds-userModal"
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      onChange={handlePhoneChange}
+                    />
                   </label>
-                  <input
-                    className="wds-userModal"
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    onChange={handlePhoneChange}
-                  />
 
                   <label htmlFor="authority" className="wds-userModal">
                     Authority :
+                    {/* <select disabled onChange={handleAuthorityChange}> */}
+                    <select disabled id="authority">
+                      {authorityValue.map(data => (
+                        <option value={data} selected={data === "Normal"}>
+                          {data}
+                        </option>
+                      ))}
+                    </select>
                   </label>
-                  {/* <select disabled onChange={handleAuthorityChange}> */}
-                  <select disabled id="authority">
-                    {authorityValue.map((data) => (
-                      <option value={data} selected={data === 'Normal'}>
-                        {data}
-                      </option>
-                    ))}
-                  </select>
                 </div>
               </div>
               <div className="wds-userModal__button-wrap">
-                <button type="submit"> Confirm </button>
+                <button type="button" onClick={handleClickConfirm}>
+                  Confirm
+                </button>
                 <button type="button" onClick={handleClickCancel}>
-                  {' '}
-                  Cancel
-                  {' '}
+                  {" "}
+                  Cancel{" "}
                 </button>
               </div>
             </form>
@@ -302,8 +305,7 @@ UserModal.propTypes = {
   handleCloseSignupModal: PropTypes.oneOfType([PropTypes.func]).isRequired,
   isOpen: PropTypes.oneOfType([PropTypes.bool]).isRequired,
   isSignUp: PropTypes.oneOfType([PropTypes.bool]).isRequired,
+  createUserConnect: PropTypes.oneOfType([PropTypes.func]).isRequired
 };
 
-const mapStateToProps = (state) => state.user;
-
-export default connect(mapStateToProps, { createUser })(UserModal);
+export default connect(null, { createUserConnect: createUser })(UserModal);

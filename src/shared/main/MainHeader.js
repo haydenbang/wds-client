@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import UserModal from '../../pages/users/UserModal';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import UserModal from "../../pages/users/UserModal";
 
-import './MainHeader.css';
+import "./MainHeader.css";
 
 class MainHeader extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: 'Web Development Signature',
+      title: "Web Development Signature"
     };
   }
 
@@ -40,10 +40,16 @@ class MainHeader extends Component {
           <Link className="wds-header-link-btn" to="/user">
             User
           </Link>
-          <button type="button" onClick={handleClickSignUp}>
+          <button
+            type="button"
+            onClick={handleClickSignUp}
+            className="wds-header-signup-btn"
+          >
             Sign up
           </button>
-          <button type="button">Sign in</button>
+          <button type="button" className="wds-header-signin-btn">
+            Sign in
+          </button>
         </div>
         <UserModal
           isOpen={signUpModalStatus}
@@ -58,6 +64,6 @@ class MainHeader extends Component {
 MainHeader.propTypes = {
   handleOpenSignupModal: PropTypes.oneOfType([PropTypes.func]).isRequired,
   handleCloseSignupModal: PropTypes.oneOfType([PropTypes.func]).isRequired,
-  signUpModalStatus: PropTypes.oneOfType([PropTypes.bool]).isRequired,
+  signUpModalStatus: PropTypes.oneOfType([PropTypes.bool]).isRequired
 };
 export default MainHeader;

@@ -24,9 +24,10 @@ p.wds-userModal__title_text {
 }
 
 .wds-userModal__content {
+  display: flex;
   margin-top: 50px;
-  margin-left: 150px;
-  margin-right: 70px;
+  margin-left: 100px;
+  margin-right: 100px;
   margin-bottom: 50px;
 }
 

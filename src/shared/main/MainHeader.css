@@ -1,31 +1,48 @@
 .wds-header {
-    width: 100%;
-    height: 60px;
-    z-index: 2000;
-    background-color: #fff;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 60px;
+  z-index: 2000;
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .wds-header-title {
-    font-size: 20px;
+  font-size: 20px;
 
-    display: inline-block;
-    height: 36px;
-    margin: 12px 0 12px 25px;
+  display: inline-block;
+  height: 36px;
+  margin: 12px 0 12px 25px;
 }
 
 .wds-header-container {
-    float: right;
+  float: right;
 }
 
 .wds-header-link-btn {
-    display: inline-block;
-    list-style: none;
-    line-height: 60px;
-    padding: 0 20px;
-    color: rgba(0,0,0,0.4);
+  display: inline-block;
+  list-style: none;
+  line-height: 60px;
+  padding: 0 20px;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .wds-header-link-btn:hover {
-    color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.wds-header-signup-btn {
+  width: 90px;
+  height: 30px;
+  background: #50b595;
+  color: white;
+  border: 0px;
+}
+
+.wds-header-signin-btn {
+  width: 90px;
+  height: 30px;
+  background: #50b595;
+  color: white;
+  border: 0px;
+  margin-left: 10px;
 }
