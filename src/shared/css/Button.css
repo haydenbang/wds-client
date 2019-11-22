@@ -1,0 +1,56 @@
+.wds-btn__gradient {
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 4px solid rgba(0,0,0,0.21);
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.wds-btn__gradient.red {
+    background: rgba(250,90,90,1);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(250,90,90,1)), to(rgba(232,81,81,1)));
+    background: -webkit-linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
+    background: -moz-linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
+    background: -o-linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
+    background: linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5a5a', endColorstr='#e85151', GradientType=0 );
+}
+
+.wds-btn__gradient.mini {
+    padding: 4px 12px;
+    font-size: 12px;
+}
+
+.wds-btn__gradient.small {
+    padding: 8px 18px;
+    font-size: 14px;
+}
+
+.wds-btn__gradient.red:active 	  {background: #E35252;}
+
+.wds-btn__button-1{
+    width:140px;
+    height:50px;
+    border:2px solid #34495e;
+    float:left;
+    text-align:center;
+    cursor:pointer;
+    position:relative;
+    box-sizing:border-box;
+    overflow:hidden;
+    margin:0 0 40px 0;
+}
+.wds-btn__button-1 a{
+    font-family:arial;
+    font-size:16px;
+    color:#34495e;
+    text-decoration:none;
+    line-height:50px;
+    transition:all .5s ease;
+    z-index:2;
+    position:relative;
+}

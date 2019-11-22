@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import './Image.css';
 import '../users/User.css';
-import ImageUploadForm from './ImageUploadForm';
-import ImageListItem from './ImageListItem';
+import ImageUploadForm from "./ImageUploadForm";
+import ImageListItem from "./ImageListItem";
 
 class Image extends Component {
   constructor(props) {
@@ -24,13 +24,14 @@ class Image extends Component {
   }
 
   render() {
+    const upload = this.state;
     return (
       <div className="wds-image-wrapper">
         <div className="wds-image__title">Image Page</div>
         <div className="wds-image__body">
-          <button className="btn-gradient red" onClick={this.openUploadForm}>Upload</button>
-          <ImageUploadForm isOpen={this.state.isFormOpen} close={this.closeUploadForm} />
-          <ImageListItem />
+            <button className="btn-gradient red" onClick={this.openUploadForm}>Upload</button>
+            <ImageUploadForm isOpen={this.state.isFormOpen} close={this.closeUploadForm} />
+            <ImageListItem />
         </div>
       </div>
     );
