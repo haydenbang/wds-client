@@ -3,6 +3,8 @@ import { UserTypes } from '../actions';
 // 초기상태 정의
 const INITIAL_STATE = {
   users: [],
+  toggle_status: false,
+  user: {},
 };
 
 // 리듀서 작성

@@ -1,0 +1,95 @@
+.wds-userModal__Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 1000;
+}
+
+p.wds-userModal__title_text {
+  font-size: 16pt;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.wds-userModal__title_text {
+  background: #50b595;
+  padding: 15px;
+}
+
+.wds-userModal__content {
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 70px;
+  margin-bottom: 50px;
+}
+
+label.wds-userModal {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input.wds-userModal {
+  width: 300px;
+  height: 40px;
+}
+
+.wds-userModal__button-wrap {
+  margin-left: 350px;
+}
+
+div.wds-userModal__profile,
+div.wds-userModal__inputs {
+  float: left;
+  display: inline;
+}
+
+.wds-userModal__picture_area {
+  width: 200px;
+  height: 250px;
+  border: 1px solid;
+  position: relative;
+  display: inline-block;
+}
+.wds-userModal__picture_area:hover .wds-userModal__edit {
+  display: block;
+}
+
+.content {
+  display: inline;
+}
+
+div.wds-userModal__profile {
+  margin: 20px;
+}
+div.wds-userModal__inputs {
+  margin: 20px;
+}
+
+.wds-userModal__profile_img {
+  width: 100%;
+  height: 100%;
+}
+
+.wds-userModal__edit {
+  padding-top: 200px;
+  padding-right: 7px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.wds-userModal__edit a {
+  color: #000;
+}
+.wds-userModal__input_file {
+  display: none;
+}

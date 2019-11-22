@@ -15,11 +15,32 @@ import NotFound from 'shared/NotFound';
 import UsersContainer from './container/UserContainer';
 
 class AppContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      signUpModalStatus: false,
+    };
+  }
+
+  handleOpenSignupModal = () => {
+    this.setState({ signUpModalStatus: true });
+  };
+
+  handleCloseSignupModal = () => {
+    this.setState({ signUpModalStatus: false });
+  };
+
   render() {
+    const { handleOpenSignupModal, handleCloseSignupModal } = this;
+    const { signUpModalStatus } = this.state;
     return (
       <Router>
         <div className="app-container">
-          <MainHeader />
+          <MainHeader
+            signUpModalStatus={signUpModalStatus}
+            handleOpenSignupModal={handleOpenSignupModal}
+            handleCloseSignupModal={handleCloseSignupModal}
+          />
           <Switch>
             <Route path="/main" component={Main} />
             <Route path="/home" component={Home} />
