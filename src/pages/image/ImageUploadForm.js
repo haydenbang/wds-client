@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import "./Image.css";
-import "../../shared/css/Modal.css";
-import PropTypes from "prop-types";
-import { uploadImage } from "../../redux/api";
+import './Image.css';
+import '../../shared/css/Modal.css';
+import PropTypes from 'prop-types';
+import { uploadImage } from '../../redux/api';
 
 class ImageUploadForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       file: null,
-      contents: ""
+      contents: '',
     }; // state 초기화
 
     // This binding is necessary to make `this` work in the callback
@@ -38,8 +38,8 @@ class ImageUploadForm extends Component {
   onClick() {
     const upload = this.state;
     const formData = new FormData();
-    formData.append("file", upload.file);
-    formData.append("contents", upload.contents);
+    formData.append('file', upload.file);
+    formData.append('contents', upload.contents);
     return uploadImage(formData);
   }
 
@@ -54,7 +54,7 @@ class ImageUploadForm extends Component {
               role="presentation"
               className="wds-modal__overlay"
               onClick={modal.close}
-              onKeyDown={e => this.onKeyDown(e)}
+              onKeyDown={(e) => this.onKeyDown(e)}
             />
             <div className="wds-modal__modal">
               <p className="title">Image Upload</p>
@@ -64,14 +64,14 @@ class ImageUploadForm extends Component {
                   type="file"
                   className="wds-image__upload_input_file"
                   name="file"
-                  onChange={e => this.onChangeFile(e)}
+                  onChange={(e) => this.onChangeFile(e)}
                 />
                 <p>Contents</p>
                 <textarea
                   className="wds-image__upload_contents"
                   name="contents"
                   value={upload.contents}
-                  onChange={e => this.onChangeText(e)}
+                  onChange={(e) => this.onChangeText(e)}
                 />
               </div>
               <div className="button-wrap">
@@ -93,7 +93,7 @@ class ImageUploadForm extends Component {
 
 ImageUploadForm.propTypes = {
   isOpen: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  close: PropTypes.oneOfType([PropTypes.object]).isRequired
+  close: PropTypes.oneOfType([PropTypes.object]).isRequired,
 };
 
 export default ImageUploadForm;

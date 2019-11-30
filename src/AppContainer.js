@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Switch,
-} from 'react-router-dom';
-import MainHeader from 'shared/main/MainHeader';
-import MainFooter from 'shared/main/MainFooter';
-import Main from 'pages/main/Main';
-import Home from 'pages/home/Home';
-import NotFound from 'shared/NotFound';
-import UsersContainer from './container/UserContainer';
-import ImageContainer from './container/ImageContainer';
+  Switch
+} from "react-router-dom";
+import MainHeader from "shared/main/MainHeader";
+import MainFooter from "shared/main/MainFooter";
+import Main from "pages/main/Main";
+import Home from "pages/home/Home";
+import NotFound from "shared/NotFound";
+import UsersContainer from "./container/UserContainer";
+import ImageContainer from "./container/ImageContainer";
 
 class AppContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      signUpModalStatus: false,
+      signUpModalStatus: false
     };
   }
 

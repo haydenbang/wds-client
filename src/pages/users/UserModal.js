@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "./UserModal.css";
 import PropTypes from "prop-types";
 import { createUser } from "../../redux/actions";
+import UserImageList from "./UserImageList";
 
 const authorityValue = ["Owner", "Admin", "Normal"];
 class UserModal extends Component {
@@ -12,9 +13,73 @@ class UserModal extends Component {
     this.state = {
       showDefaultPreview: true,
       defaultImg: "/images/default_profile.png",
-      imagePreviewUrl: ""
+      imagePreviewUrl: "",
+      id: this.props.user.id
     };
   }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   let nextState = {};
+  //   console.log("AAAA");
+  //   nextState.id = nextProps.user.id;
+  //   return nextState;
+  // }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shold : " + nextProps.user.id);
+    console.log("shoud : " + nextProps.id);
+    console.log("this.state.id : " + this.state.id);
+    console.log("nextState.id : " + nextState.id);
+    nextState.id = nextProps.user.id;
+    nextState.address = nextProps.user.address;
+    nextState.authority = nextProps.user.authority;
+    nextState.name = nextProps.user.name;
+    nextState.nick_name = nextProps.user.nick_name;
+    nextState.pass = nextProps.user.pass;
+    nextState.photo = nextProps.user.photo;
+    nextState.tel = nextProps.user.tel;
+
+    if (this.state.id !== nextState.id) {
+      console.log("!!!! : " + nextState.id);
+    }
+
+    return true;
+  }
+
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   let nextState = {};
+  //   let initUser = {
+  //     address: "",
+  //     authority: "normal",
+  //     id: "",
+  //     name: "",
+  //     nick_name: "",
+  //     pass: "",
+  //     photo: "",
+  //     tel: ""
+  //   };
+  //   if (nextProps.user === null || nextProps.user === "undefined") {
+  //     //nextState.user = initUser;
+  //     nextState.id = initUser.id;
+  //     nextState.address = initUser.address;
+  //     nextState.authority = initUser.authority;
+  //     nextState.id = initUser.id;
+  //     nextState.name = initUser.name;
+  //     nextState.nick_name = initUser.nick_name;
+  //     nextState.pass = initUser.pass;
+  //     nextState.photo = initUser.photo;
+  //     nextState.tel = initUser.tel;
+  //   }
+  //   nextState.user = nextProps.user;
+  //   nextState.address = nextProps.user.address;
+  //   nextState.authority = nextProps.user.authority;
+  //   nextState.id = nextProps.id;
+  //   nextState.name = nextProps.user.name;
+  //   nextState.nick_name = nextProps.user.nick_name;
+  //   nextState.pass = nextProps.user.pass;
+  //   nextState.photo = nextProps.user.photo;
+  //   nextState.tel = nextProps.user.tel;
+  //   console.log("nextState" + nextProps.id);
+  //   return nextState;
+  // }
 
   // handleSubmit = () => {
   //   // handleCloseSignupModal();
@@ -32,17 +97,17 @@ class UserModal extends Component {
   // };
 
   handleClickConfirm = () => {
-    console.log("click");
     const { id, pass, name, nickname, address, tel, imgFile } = this.state;
     const { createUserConnect } = this.props;
     const user = {
+      address,
+      authority: "normal",
       id,
-      pass,
       name,
       nickname,
-      address,
-      tel,
-      photo: imgFile
+      pass,
+      photo: "",
+      tel
     };
 
     createUserConnect(user);
@@ -77,6 +142,7 @@ class UserModal extends Component {
   };
 
   handleIdChange = ({ target: { value } }) => {
+    console.log("event : " + value);
     this.setState({
       id: value
     });
@@ -127,7 +193,7 @@ class UserModal extends Component {
 
   render() {
     const { defaultImg, showDefaultPreview, imagePreviewUrl } = this.state;
-    const { isOpen, isSignUp } = this.props;
+    const { isOpen, isSignUp, user } = this.props;
     const {
       handleClickCancel,
       handleClickEditProfile,
@@ -144,6 +210,7 @@ class UserModal extends Component {
       // handleSubmit,
     } = this;
     const modalTitle = isSignUp ? "Sign Up" : "User Detail";
+    console.log("USER : " + this.props.user.id);
 
     // const showImage = () => {
     //   {showDefaultPreview ? (
@@ -163,10 +230,10 @@ class UserModal extends Component {
         {isOpen ? (
           <div className="wds-userModal__Modal">
             {/* <form onSubmit={handleSubmit}> */}
+            <div className="wds-userModal__title">
+              <p className="wds-userModal__title_text">{modalTitle}</p>
+            </div>
             <form>
-              <div className="wds-userModal__title">
-                <p className="wds-userModal__title_text">{modalTitle}</p>
-              </div>
               <div className="wds-userModal__content">
                 <div className="wds-userModal__profile">
                   <div className="wds-userModal__picture_area">
@@ -213,6 +280,7 @@ class UserModal extends Component {
                       id="id"
                       name="id"
                       onChange={handleIdChange}
+                      value={this.state.id}
                     />
                   </label>
 
@@ -224,6 +292,7 @@ class UserModal extends Component {
                       id="password"
                       name="password"
                       onChange={handlePassChange}
+                      value={this.state.pass}
                     />
                   </label>
 
@@ -235,6 +304,7 @@ class UserModal extends Component {
                       id="name"
                       name="user_name"
                       onChange={handleNameChange}
+                      value={this.state.name}
                     />
                   </label>
 
@@ -246,6 +316,7 @@ class UserModal extends Component {
                       id="nickname"
                       name="nickname"
                       onChange={handleNicknameChange}
+                      value={this.state.nick_name}
                     />
                   </label>
 
@@ -257,6 +328,7 @@ class UserModal extends Component {
                       id="address"
                       name="address"
                       onChange={handleAddressChange}
+                      value={this.state.address}
                     />
                   </label>
 
@@ -268,15 +340,19 @@ class UserModal extends Component {
                       id="phone"
                       name="phone"
                       onChange={handlePhoneChange}
+                      value={this.state.tel}
                     />
                   </label>
 
                   <label htmlFor="authority" className="wds-userModal">
                     Authority :
                     {/* <select disabled onChange={handleAuthorityChange}> */}
-                    <select disabled id="authority">
+                    <select disabled={isSignUp} id="authority">
                       {authorityValue.map(data => (
-                        <option value={data} selected={data === "Normal"}>
+                        <option
+                          value={data}
+                          selected={data === this.state.authority}
+                        >
                           {data}
                         </option>
                       ))}
@@ -284,11 +360,20 @@ class UserModal extends Component {
                   </label>
                 </div>
               </div>
+              {isSignUp ? null : <UserImageList />}
               <div className="wds-userModal__button-wrap">
-                <button type="button" onClick={handleClickConfirm}>
+                <button
+                  type="button"
+                  onClick={handleClickConfirm}
+                  className="wds-userModal__confirm-btn"
+                >
                   Confirm
                 </button>
-                <button type="button" onClick={handleClickCancel}>
+                <button
+                  type="button"
+                  onClick={handleClickCancel}
+                  className="wds-userModal__cancel-btn"
+                >
                   {" "}
                   Cancel{" "}
                 </button>
@@ -305,7 +390,10 @@ UserModal.propTypes = {
   handleCloseSignupModal: PropTypes.oneOfType([PropTypes.func]).isRequired,
   isOpen: PropTypes.oneOfType([PropTypes.bool]).isRequired,
   isSignUp: PropTypes.oneOfType([PropTypes.bool]).isRequired,
-  createUserConnect: PropTypes.oneOfType([PropTypes.func]).isRequired
+  createUserConnect: PropTypes.oneOfType([PropTypes.func]).isRequired,
+  getUserConnect: PropTypes.oneOfType([PropTypes.func]).isRequired
 };
 
-export default connect(null, { createUserConnect: createUser })(UserModal);
+export default connect(null, {
+  createUserConnect: createUser
+})(UserModal);

@@ -1,134 +1,163 @@
 .wds-user__body-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .wds-user__title {
-    height: 40px;
-    font-size: 22px;
-    text-align: center;
+  height: 40px;
+  font-size: 22px;
+  text-align: center;
 }
 
 .wds-user__body {
-    width: 100%;
-    height: calc(100% - 400px);
+  width: 100%;
+  height: calc(100% - 400px);
 }
 
 .wds-user-wrapper {
-    width: 100%;
-    height: calc(100% - 60px);
+  width: 100%;
+  height: calc(100% - 60px);
 }
 
 table.wds_user_table {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    margin: 20px 10px;
+  border-collapse: separate;
+  border-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 20px 10px;
 }
 table.wds_user_table th {
-    width: 155px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #fff;
-    background: #ce4869 ;
+  width: 155px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  background: #ce4869;
 }
 table.wds_user_table td {
-    width: 155px;
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #eee;
+  width: 155px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #eee;
 }
 
-body:before{
-    content:'';
-    height:100%;
-    display:inline-block;
-    vertical-align:middle;
+body:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .btn-gradient {
-    text-decoration: none;
-    color: white;
-    padding: 10px 30px;
-    display: inline-block;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.21);
-    border-bottom: 4px solid rgba(0,0,0,0.21);
-    border-radius: 4px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+  text-decoration: none;
+  color: white;
+  padding: 10px 30px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.21);
+  border-radius: 4px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
 }
 
 .btn-gradient.red {
-    background: rgba(250,90,90,1);
-    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(250,90,90,1)), to(rgba(232,81,81,1)));
-    background: -webkit-linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
-    background: -moz-linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
-    background: -o-linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
-    background: linear-gradient(rgba(250,90,90,1) 0%, rgba(232,81,81,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5a5a', endColorstr='#e85151', GradientType=0 );
+  background: rgba(250, 90, 90, 1);
+  background: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(rgba(250, 90, 90, 1)),
+    to(rgba(232, 81, 81, 1))
+  );
+  background: -webkit-linear-gradient(
+    rgba(250, 90, 90, 1) 0%,
+    rgba(232, 81, 81, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    rgba(250, 90, 90, 1) 0%,
+    rgba(232, 81, 81, 1) 100%
+  );
+  background: -o-linear-gradient(
+    rgba(250, 90, 90, 1) 0%,
+    rgba(232, 81, 81, 1) 100%
+  );
+  background: linear-gradient(
+    rgba(250, 90, 90, 1) 0%,
+    rgba(232, 81, 81, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa5a5a', endColorstr='#e85151', GradientType=0 );
 }
 
 .btn-gradient.mini {
-    padding: 4px 12px;
-    font-size: 12px;
+  padding: 4px 12px;
+  font-size: 12px;
 }
 
 .btn-gradient.small {
-    padding: 8px 18px;
-    font-size: 14px;
+  padding: 8px 18px;
+  font-size: 14px;
 }
 
-.btn-gradient.red:active 	  {background: #E35252;}
+.btn-gradient.red:active {
+  background: #e35252;
+}
 
-.user_input {position: relative; width: 300px; height: 40px; margin: 15px}
+.user_input {
+  position: relative;
+  width: 300px;
+  height: 40px;
+  margin: 15px;
+}
 
 .user_input label {
-    position: absolute;
-    top: 1px;  /* input 요소의 border-top 설정값 만큼 */
-    left: 1px;  /* input 요소의 border-left 설정값 만큼 */
-    padding: .8em .5em;  /* input 요소의 padding 값 만큼 */
-    color: #999;
-    cursor: text;
+  position: absolute;
+  top: 1px; /* input 요소의 border-top 설정값 만큼 */
+  left: 1px; /* input 요소의 border-left 설정값 만큼 */
+  padding: 0.8em 0.5em; /* input 요소의 padding 값 만큼 */
+  color: #999;
+  cursor: text;
 }
 
 .user_input input[type="text"] {
-    width: 100%;  /* 원하는 너비 설정 */
-    height: auto;  /* 높이값 초기화 */
-    line-height : normal;  /* line-height 초기화 */
-    padding: .8em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
-    border: 1px solid #999;
-    border-radius: 0;  /* iSO 둥근모서리 제거 */
-    outline-style: none;  /* 포커스시 발생하는 효과 제거를 원한다면 */
-    -webkit-appearance: none;  /* 브라우저별 기본 스타일링 제거 */
-    -moz-appearance: none;
-    appearance: none;
+  width: 100%; /* 원하는 너비 설정 */
+  height: auto; /* 높이값 초기화 */
+  line-height: normal; /* line-height 초기화 */
+  padding: 0.8em 0.5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+  border: 1px solid #999;
+  border-radius: 0; /* iSO 둥근모서리 제거 */
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+  -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.button-1{
-    width:140px;
-    height:50px;
-    border:2px solid #34495e;
-    float:left;
-    text-align:center;
-    cursor:pointer;
-    position:relative;
-    box-sizing:border-box;
-    overflow:hidden;
-    margin:0 0 40px 0;
+.button-1 {
+  width: 140px;
+  height: 50px;
+  border: 2px solid #34495e;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0 0 40px 0;
 }
-.button-1 a{
-    font-family:arial;
-    font-size:16px;
-    color:#34495e;
-    text-decoration:none;
-    line-height:50px;
-    transition:all .5s ease;
-    z-index:2;
-    position:relative;
+.button-1 a {
+  font-family: arial;
+  font-size: 16px;
+  color: #34495e;
+  text-decoration: none;
+  line-height: 50px;
+  transition: all 0.5s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.wds-userLIstItem__tr:hover {
+  background: silver;
 }

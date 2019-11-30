@@ -1,12 +1,48 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import UserSearchForm from './UserSearchForm';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import UserSearchForm from "./UserSearchForm";
 
-import './User.css';
-import UserListItem from './UserListItem';
+import "./User.css";
+import UserListItem from "./UserListItem";
+import UserModal from "./UserModal";
 
 class User extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userDetailModalStatus: false,
+      isSignUp: false,
+      user: {
+        address: "",
+        authority: "normal",
+        id: "",
+        name: "",
+        nickname: "",
+        pass: "",
+        photo: "",
+        tel: ""
+      }
+    };
+  }
+
+  handleOpenUserDetailModal = () => {
+    this.setState({ userDetailModalStatus: true });
+  };
+
+  handleCloseUserDetailModal = () => {
+    this.setState({ userDetailModalStatus: false });
+  };
+  getUser = user => {
+    console.log("user : " + user.id);
+    this.setState({ user });
+  };
   render() {
+    const { userDetailModalStatus, isSignUp, user } = this.state;
+    const {
+      handleOpenUserDetailModal,
+      handleCloseUserDetailModal,
+      getUser
+    } = this;
     const { users } = this.props;
     console.log(users);
     if (users !== undefined) {
@@ -34,13 +70,24 @@ class User extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {
-                    users.map((row) => (<UserListItem key={`${row.idx}`} row={row} />))
-                  }
+                  {users.map(row => (
+                    <UserListItem
+                      getUser={getUser}
+                      key={`${row.idx}`}
+                      row={row}
+                      handleOpenUserDetailModal={handleOpenUserDetailModal}
+                    />
+                  ))}
                 </tbody>
               </table>
             </div>
           </div>
+          <UserModal
+            user={user}
+            isOpen={userDetailModalStatus}
+            isSignUp={isSignUp}
+            handleCloseSignupModal={handleCloseUserDetailModal}
+          />
         </div>
       );
     }
@@ -49,7 +96,7 @@ class User extends Component {
 }
 
 User.propTypes = {
-  users: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  users: PropTypes.oneOfType([PropTypes.object]).isRequired
 };
 
 export default User;

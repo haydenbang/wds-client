@@ -10,7 +10,17 @@ class MainHeader extends Component {
     super(props);
 
     this.state = {
-      title: "Web Development Signature"
+      title: "Web Development Signature",
+      initUser: {
+        address: "",
+        authority: "normal",
+        id: "",
+        name: "",
+        nick_name: "",
+        pass: "",
+        photo: "",
+        tel: ""
+      }
     };
   }
 
@@ -20,7 +30,7 @@ class MainHeader extends Component {
   };
 
   render() {
-    const { title } = this.state;
+    const { title, initUser } = this.state;
     const { handleClickSignUp } = this;
     const { signUpModalStatus, handleCloseSignupModal } = this.props;
 
@@ -52,6 +62,7 @@ class MainHeader extends Component {
           </button>
         </div>
         <UserModal
+          user={initUser}
           isOpen={signUpModalStatus}
           isSignUp
           handleCloseSignupModal={handleCloseSignupModal}

@@ -1,15 +1,34 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-import './User.css';
+import "./User.css";
 
 class UserListItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userDetailModalStatus: false
+    };
+  }
+
+  handleOpenUserDetailModal = user => {
+    console.log("click");
+    const { handleOpenUserDetailModal, getUser } = this.props;
+    getUser(user);
+    handleOpenUserDetailModal();
+  };
+
+  handleCloseUserDetailModal = () => {
+    this.setState({ userDetailModalStatus: false });
+  };
+
   render() {
     const { row } = this.props;
+    const { handleOpenUserDetailModal, userDetailModalStatus } = this;
     return (
-      <tr>
+      <tr className="wds-userLIstItem__tr">
         <td key={row.idx}>{row.idx}</td>
-        <td>{row.id}</td>
+        <td onClick={() => handleOpenUserDetailModal(row)}>{row.id}</td>
         <td>{row.name}</td>
         <td>{row.nick_name}</td>
         <td>{row.address}</td>
@@ -19,7 +38,7 @@ class UserListItem extends Component {
         <td>User</td>
         <td>
           <button type="button" className="btn-gradient red mini">
-                Active
+            Active
           </button>
         </td>
       </tr>
@@ -28,7 +47,7 @@ class UserListItem extends Component {
 }
 
 UserListItem.propTypes = {
-  row: PropTypes.oneOfType([PropTypes.object]).isRequired,
+  row: PropTypes.oneOfType([PropTypes.object]).isRequired
 };
 
 export default UserListItem;

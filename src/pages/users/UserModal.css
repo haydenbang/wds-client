@@ -25,10 +25,8 @@ p.wds-userModal__title_text {
 
 .wds-userModal__content {
   display: flex;
-  margin-top: 50px;
   margin-left: 100px;
   margin-right: 100px;
-  margin-bottom: 50px;
 }
 
 label.wds-userModal {
@@ -38,7 +36,7 @@ label.wds-userModal {
 
 input.wds-userModal {
   width: 300px;
-  height: 40px;
+  height: 30px;
 }
 
 .wds-userModal__button-wrap {
@@ -93,4 +91,60 @@ div.wds-userModal__inputs {
 }
 .wds-userModal__input_file {
   display: none;
+}
+
+.wds-userModal__confirm-btn {
+  width: 90px;
+  height: 30px;
+  background: #50b595;
+  color: white;
+  border: 0px;
+  margin-left: 10px;
+}
+
+.wds-userModal__cancel-btn {
+  width: 90px;
+  height: 30px;
+  background: #50b595;
+  color: white;
+  border: 0px;
+  margin-left: 10px;
+}
+
+.wds-userImageList {
+  display: flex;
+}
+.wds-userImageList__thumbNail_area {
+  flex: 2;
+}
+
+.wds-userImageLIst__thumbNail_img {
+  width: 50%;
+  height: 70%;
+  margin-left: 25%;
+}
+table.wds-userImageList__image_table {
+  border-collapse: separate;
+  border-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+  margin: 20px 10px;
+}
+table.wds-userImageList__image_table th {
+  width: 155px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  background: #ce4869;
+}
+table.wds-userImageList__image_table td {
+  width: 155px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #000;
+  background: #fff;
+}
+.wds-userImageList__list_area {
+  width: 60%;
 }
